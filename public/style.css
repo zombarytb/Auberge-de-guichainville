@@ -1,0 +1,319 @@
+/* ========================================== */
+/* CHARTE GRAPHIQUE - CHALEUREUSE & LISIBLE */
+/* ========================================== */
+:root {
+    --primary-color: #5c3a21; /* Marron chaud / Terre cuite */
+    --secondary-color: #c68a4c; /* Ocre / Doré chaud et doux */
+    --bg-color: #fcf8f2; /* Fond très clair, chaleureux et reposant (blanc cassé crème) */
+    --card-bg: #ffffff; /* Cartes en blanc pur */
+    --text-main: #2c221e; /* Marron très foncé (plus doux et lisible que le noir) */
+    --text-muted: #7d6f66; /* Beige grisé foncé pour les sous-titres */
+    --font-title: 'Nunito', sans-serif; 
+    --font-text: 'Nunito', sans-serif; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typographie lisible */
+h1, h2, h3, .section-title {
+    font-family: var(--font-title);
+    letter-spacing: 0.5px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Header / Hero */
+.hero-header {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-header.hero-sub {
+    height: 35vh;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44, 34, 30, 0.85); /* Overlay marron chaud */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-container h1 {
+    font-size: 3.5rem;
+    color: #fcf8f2;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #d4c5b9;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* Boutons et Liens sociaux */
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-social, .btn-contact {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-social {
+    background: transparent;
+    border: 2px solid #d4c5b9;
+    color: #fcf8f2;
+}
+
+.btn-social:hover {
+    background: #fcf8f2;
+    color: var(--primary-color);
+    border-color: #fcf8f2;
+}
+
+.btn-contact {
+    background: var(--secondary-color);
+    color: #fcf8f2;
+    border: none;
+}
+
+.btn-contact:hover {
+    background: var(--primary-color);
+    color: #fcf8f2;
+}
+
+/* Cartes et sections */
+.main-container {
+    max-width: 1200px;
+    margin: -80px auto 50px auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.card-section {
+    background: var(--card-bg);
+    border: 1px solid rgba(186, 131, 74, 0.2);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.card-section.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.card-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    font-size: 1.2rem;
+}
+
+/* Style de l'ardoise (Menus) */
+.slate-board {
+    background: #332720; /* Fond ardoise / tableau marron très foncé */
+    border: 3px dashed var(--secondary-color);
+    border-radius: 15px;
+    padding: 40px;
+    color: #fff5eb;
+    margin-bottom: 50px;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.slate-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid rgba(198, 138, 76, 0.3);
+    padding-bottom: 15px;
+}
+
+.menu-category {
+    margin-bottom: 35px;
+}
+
+.menu-category h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px dotted rgba(255,255,255,0.2);
+    padding-bottom: 8px;
+}
+
+.item-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.item-price {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #e5b07a;
+}
+
+/* Formulaires */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 16px;
+    background-color: #f7f3ed;
+    border: 1.5px solid #dfcfb8;
+    color: var(--text-main);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px rgba(198, 138, 76, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 18px;
+    background: var(--primary-color);
+    color: #fcf8f2;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+#form-message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    border-top: 1px solid #dfcfb8;
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .hero-container h1 {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .card-section {
+        padding: 25px;
+    }
+    .slate-board {
+        padding: 20px;
+    }
+    .item-name {
+        font-size: 1.1rem;
+    }
+    .item-price {
+        font-size: 1.15rem;
+    }
+}

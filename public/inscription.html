@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - L'Auberge de Guichainville</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero-header" style="height: 30vh;">
+        <div class="hero-overlay">
+            <div class="hero-container">
+                <h1>Créer un compte</h1>
+                <p class="hero-subtitle">Rejoignez L'Auberge de Guichainville</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="card-section">
+            <h2 class="section-title">Inscription</h2>
+            <p class="section-subtitle">Créez votre compte pour réserver plus rapidement.</p>
+            
+            <form id="register-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="reg-name">Nom complet</label>
+                        <input type="text" id="reg-name" required placeholder="Ex: Jean Dupont">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Adresse e-mail</label>
+                        <input type="email" id="reg-email" required placeholder="Ex: jean@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone">Numéro de téléphone</label>
+                        <input type="tel" id="reg-phone" required placeholder="Ex: 06 12 34 56 78">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Mot de passe</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">S'inscrire</button>
+            </form>
+
+            <div id="form-message"></div>
+
+            <p style="text-align: center; margin-top: 20px;">
+                <a href="connexion.html" style="color: var(--secondary-color); text-decoration: none; font-weight: 600;">Déjà un compte ? Se connecter</a>
+            </p>
+            
+            <p style="text-align: center; margin-top: 15px;">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none;">← Retour à l'accueil</a>
+            </p>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.style.color = "blue";
+            messageDiv.innerText = "Création de votre compte en cours...\nPatientez...";
+
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const phone = document.getElementById('reg-phone').value;
+            const password = document.getElementById('reg-password').value;
+
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, phone, password })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    messageDiv.style.color = "green";
+                    messageDiv.innerText = result.message;
+                    setTimeout(() => { window.location.href = 'connexion.html'; }, 2000);
+                } else {
+                    messageDiv.style.color = "red";
+                    messageDiv.innerText = result.message;
+                }
+            } catch (err) {
+                messageDiv.style.color = "red";
+                messageDiv.innerText = "Erreur serveur.";
+            }
+        });
+    </script>
+</body>
+</html>

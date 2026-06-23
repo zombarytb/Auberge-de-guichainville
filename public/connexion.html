@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - L'Auberge de Guichainville</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero-header" style="height: 30vh;">
+        <div class="hero-overlay">
+            <div class="hero-container">
+                <h1>Espace Client</h1>
+                <p class="hero-subtitle">Connexion</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="card-section" style="max-width: 500px; margin: 0 auto;">
+            <h2 class="section-title">Connexion</h2>
+            <p class="section-subtitle">Accédez à votre espace.</p>
+            
+            <form id="login-form">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="login-email">Adresse e-mail</label>
+                    <input type="email" id="login-email" required placeholder="Ex: jean@mail.com">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Se connecter</button>
+            </form>
+
+            <div id="form-message"></div>
+
+            <p style="text-align: center; margin-top: 20px;">
+                <a href="inscription.html" style="color: var(--secondary-color); text-decoration: none; font-weight: 600;">Pas encore de compte ? S'inscrire</a>
+            </p>
+            
+            <p style="text-align: center; margin-top: 15px;">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none;">← Retour à l'accueil</a>
+            </p>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.style.color = "blue";
+            messageDiv.innerText = "Connexion en cours...";
+
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    messageDiv.style.color = "green";
+                    messageDiv.innerText = result.message;
+                    setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+                } else {
+                    messageDiv.style.color = "red";
+                    messageDiv.innerText = result.message;
+                }
+            } catch (err) {
+                messageDiv.style.color = "red";
+                messageDiv.innerText = "Erreur serveur.";
+            }
+        });
+    </script>
+</body>
+</html>

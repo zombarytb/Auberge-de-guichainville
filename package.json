@@ -1,0 +1,18 @@
+{
+  "name": "resto-site-test",
+  "version": "1.0.0",
+  "description": "Site de test pour restaurant avec réservations par E-mail",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.19.0",
+    "nodemailer": "^6.9.13"
+  },
+  "author": "",
+  "license": "ISC"
+}

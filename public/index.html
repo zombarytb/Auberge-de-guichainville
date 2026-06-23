@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Auberge de Guichainville - Restaurant & Privatisation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero-header">
+        <div class="hero-overlay">
+            <div class="hero-container">
+                <h1>L'Auberge de Guichainville</h1>
+                <p class="hero-subtitle">Une cuisine authentique et chaleureuse</p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/maurizio.acciarino.7/?locale=fr_FR" target="_blank" class="btn-social fb">Facebook</a>
+                    <a href="https://www.instagram.com/l_auberge_de_guichainville/" target="_blank" class="btn-social ig">Instagram</a>
+                    <a href="privatisation.html" class="btn-contact">Nous contacter</a>
+                    <div id="user-nav" style="display: inline-block; margin-left: 15px;">
+                        <a href="connexion.html" class="btn-contact" style="background: transparent; border: 1px solid #c68a4c;">Espace Client</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="slate-board">
+            <h2 class="slate-title">Notre Carte & Menus</h2>
+            
+            <div class="menu-category">
+                <h3>Entrées</h3>
+                <div class="menu-item">
+                    <span class="item-name">Velouté de légumes de saison</span>
+                    <span class="item-price">9,00 €</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Terrine maison et ses toasts</span>
+                    <span class="item-price">11,00 €</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Plats</h3>
+                <div class="menu-item">
+                    <span class="item-name">Pièce du boucher, frites fraîches</span>
+                    <span class="item-price">19,50 €</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Poisson du retour de marché</span>
+                    <span class="item-price">22,00 €</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Desserts</h3>
+                <div class="menu-item">
+                    <span class="item-name">Tarte Tatin et sa crème</span>
+                    <span class="item-price">8,50 €</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Assiette de fromages normands</span>
+                    <span class="item-price">9,50 €</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <h2 class="section-title">Réserver une table</h2>
+            <p class="section-subtitle">Veuillez remplir le formulaire ci-dessous pour effectuer votre demande.</p>
+            
+            <form id="reservation-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" required placeholder="Ex: Jean Dupont">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" id="email" required placeholder="Ex: jean.dupont@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" required placeholder="Ex: 06 12 34 56 78">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Nombre de couverts</label>
+                        <input type="number" id="guests" min="1" max="50" step="1" value="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date souhaitée</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Heure de votre venue</label>
+                        <input type="time" id="time" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer la demande de réservation</button>
+            </form>
+
+            <div id="form-message"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 — L'Auberge de Guichainville. Tous droits réservés.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

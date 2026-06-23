@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Privatisation - L'Auberge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero-header hero-sub">
+        <div class="hero-overlay">
+            <div class="hero-container">
+                <h1>Contact & Privatisation</h1>
+                <p class="hero-subtitle">Écrivez directement à l'Auberge de Guichainville</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section id="privatisation-section" class="card-section">
+            <h2 class="section-title">Formulaire de contact</h2>
+            <p class="section-subtitle">Une question ? Une demande de repas de groupe ? Notre équipe vous répondra par e-mail dans les plus brefs délais.</p>
+            
+            <form id="privatisation-form">
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="client-email">Votre adresse e-mail</label>
+                    <input type="email" id="client-email" required placeholder="Ex: jean.dupont@mail.com">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="client-subject">Objet de votre demande</label>
+                    <select id="client-subject" required>
+                        <option value="Question générale">Question générale / Demande de renseignements</option>
+                        <option value="Repas groupe 20pers + (possibilité de privatisation)">Repas groupe 20pers + (possibilité de privatisation)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="client-message">Votre message</label>
+                    <textarea id="client-message" required placeholder="Rédigez votre message ici..." rows="6" style="width: 100%; padding: 16px; background-color: #f7f3ed; border: 1.5px solid #dfcfb8; color: var(--text-main); border-radius: 10px; font-family: inherit; font-size: 1.1rem; resize: vertical; transition: border-color 0.3s;"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer le message</button>
+            </form>
+
+            <div id="form-message"></div>
+            
+            <p style="text-align: center; margin-top: 30px;">
+                <a href="index.html" style="color: var(--secondary-color); text-decoration: none; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.5px;">← Retour à l'accueil</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 — L'Auberge de Guichainville. Tous droits réservés.</p>
+    </footer>
+
+    <script src="privatisation.js"></script>
+</body>
+</html>
