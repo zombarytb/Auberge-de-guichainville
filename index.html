@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOMBAR - Le Royaume</title>
+
+    <!-- Icônes / Favicon pour raccourci mobile et onglet -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg?v=11">
+    <link rel="apple-touch-icon" href="logo.jpg?v=11">
+    <link rel="shortcut icon" href="logo.jpg?v=11">
+
+    <!-- Script pour l'effet confettis -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Urbanist:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+
+    <div class="glow-overlay">
+        <div class="glow-green"></div>
+        <div class="glow-orange"></div>
+        <div class="glow-blue"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="signature-container">
+            <img src="signature.png" alt="Signature Zombar" class="signature-img">
+        </div>
+    </header>
+
+    <main>
+        <div class="logo-wrapper">
+            <img src="logo.jpg" alt="Logo Zombar" class="logo-img">
+        </div>
+
+        <div class="hero-text">
+            <h1 class="main-title">ZOMBAR</h1>
+            <p class="sub-title">Bienvenue dans le royaume</p>
+        </div>
+
+        <div class="hero-buttons">
+            <a href="https://www.youtube.com/@zambar4487" target="_blank" class="btn-main">
+                <i class="fa-solid fa-play"></i> Voir YouTube
+            </a>
+            <a href="biography.html" class="btn-secondary">
+                <i class="fa-solid fa-user"></i> Biography
+            </a>
+        </div>
+
+        <!-- Navigation principale + Badge Live -->
+        <div class="navbar-container">
+            <nav>
+                <ul class="navbar">
+                    <li class="nav-item"><a href="index.html" class="active-nav">Accueil</a></li>
+                    <li class="nav-item"><a href="jeux.html">Jeux</a></li>
+                    <li class="nav-item"><a href="planning.html">Planning</a></li>
+                    <li class="nav-item"><a href="setup.html">Setup</a></li>
+                    <li class="nav-item"><a href="beamng.html">BeamNG</a></li>
+                    <li class="nav-item"><a href="suggestions.html">Contact</a></li>
+                    <li class="nav-item"><a href="boutique.html">Boutique</a></li>
+                </ul>
+            </nav>
+
+            <!-- Badge Live dynamique -->
+            <a href="https://twitch.tv/zombarytb" target="_blank" class="live-badge offline" id="twitch-live-badge">
+                <span class="pulse-dot"></span>
+                <span class="live-text">OFFLINE</span>
+            </a>
+        </div>
+
+        <!-- Section Statistiques Réseaux -->
+        <div class="social-stats-wrapper">
+            <div class="social-glass-box">
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" class="social-card">
+                    <div class="social-icon-box"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="social-count">12</div>
+                </a>
+
+                <!-- Twitch -->
+                <a href="https://twitch.tv/zombarytb" target="_blank" class="social-card">
+                    <div class="social-icon-box"><i class="fa-brands fa-twitch"></i></div>
+                    <div class="social-count">119</div>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@zombarytb" target="_blank" class="social-card">
+                    <div class="social-icon-box"><i class="fa-brands fa-tiktok"></i></div>
+                    <div class="social-count">279</div>
+                </a>
+
+                <!-- Discord -->
+                <a href="https://discord.gg/CXp7zteBKh" target="_blank" class="social-card">
+                    <div class="social-icon-box"><i class="fa-brands fa-discord"></i></div>
+                    <div class="social-count">50</div>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@zambar4487" target="_blank" class="social-card">
+                    <div class="social-icon-box"><img src="logo.jpg" alt="Logo" class="custom-logo-net"></div>
+                    <div class="social-count">320</div>
+                </a>
+
+                <!-- Carte Total Communauté (Interactive) -->
+                <div class="social-card total-community-card" id="total-subs-btn">
+                    <div class="social-icon-box crown-icon">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div class="social-count" id="total-count">780</div>
+                    <span class="total-sub-label">Total / Cliquez !</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION : GALERIE CLIPS & HIGHLIGHTS -->
+        <section class="section-container scroll-reveal">
+            <h2 class="section-title"><i class="fa-solid fa-clapperboard"></i> Clips & Highlights</h2>
+            <div class="highlights-grid">
+                
+                <div class="clip-card">
+                    <div class="clip-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Clip Highlight 1">
+                        <a href="https://www.youtube.com/@zambar4487" target="_blank" class="play-btn-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </div>
+                    <div class="clip-info">
+                        <h3>Action Folle sur BeamNG !</h3>
+                        <p>Moment épique en plein stream crash test.</p>
+                    </div>
+                </div>
+
+                <div class="clip-card">
+                    <div class="clip-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Clip Highlight 2">
+                        <a href="https://www.youtube.com/@zambar4487" target="_blank" class="play-btn-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </div>
+                    <div class="clip-info">
+                        <h3>Meilleurs Fails Stream</h3>
+                        <p>La communauté a bien rigolé sur cette séquence.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION : WIDGET DISCORD INTERACTIF -->
+        <section class="section-container scroll-reveal">
+            <div class="discord-widget-card">
+                <div class="discord-header">
+                    <div class="discord-brand">
+                        <i class="fa-brands fa-discord discord-logo-icon"></i>
+                        <div>
+                            <h3>Le Royaume de Zombar</h3>
+                            <span class="discord-status-text">
+                                <span class="discord-online-dot"></span> 
+                                <strong id="discord-online-count">--</strong> Membres en ligne
+                            </span>
+                        </div>
+                    </div>
+                    <a href="https://discord.gg/CXp7zteBKh" target="_blank" class="btn-discord-join">
+                        Rejoindre le Discord
+                    </a>
+                </div>
+                <div class="discord-members-preview" id="discord-members-list">
+                    <!-- Avatars générés dynamiquement par le JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js?v=11"></script>
+</body>
+</html>
